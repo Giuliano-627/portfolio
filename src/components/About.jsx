@@ -1,6 +1,6 @@
 import React from "react";
-import "./Home.css";
-export default function Home() {
+import "./Home.css"
+export default function About() {
   return (
     <div>
       <nav className="navbar navbar-inverse bg-dark">
@@ -31,7 +31,6 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <h1>ESTE PORTFOLIO AUN SE ENCUENTRA EN CONSTRUCCION</h1>
     </div>
   );
 }

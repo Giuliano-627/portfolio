@@ -47,9 +47,9 @@
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
   .botonPortfolio{
-    border: solid 5px gray;
-    border-radius: 40px ;
+    border: none;
     color: white;
+    padding-left: 20px;
   }
   body{
     background-image: url("../resources/backGround.jpg");
