@@ -1,0 +1,46 @@
+.card {
+  justify-items: center;
+    border: 1px solid;
+  background-color: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+  border-color: black;
+  transition: 0.2s;
+  height: 325px;
+  width: 150px;
+  border-radius: 3px;
+  border-color: gold;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+.card:hover {
+  box-shadow: 4px 4px 8px 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(14px);
+  border-radius: 2px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  color: aqua;
+}
+.card-top{
+    align-content: center;
+}
+.card-top > img {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;   
+}
+.name{
+    margin-left:33%;
+    margin-right: 33%;
+    display: block;
+}
