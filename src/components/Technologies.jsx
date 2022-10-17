@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Navbar from "./NavBar";
 import "./Technologies.css";
 import cssIco from "../resources/css3Icon.png";
@@ -18,7 +18,7 @@ export default function Technologies() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 1,
     autoplaySpeed: 2000,
     cssEase: "linear",
     nextArrow: <SampleNextArrow />,
