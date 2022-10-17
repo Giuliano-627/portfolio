@@ -13,27 +13,31 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 export default function Technologies() {
   var settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
+    dots: false,
+    infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 3,
-    initialSlide: 0,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -46,6 +50,27 @@ export default function Technologies() {
       },
     ],
   };
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "none", background: "transparent" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "none", background: "transparent" }}
+        onClick={onClick}
+      />
+    );
+  }
   const techs = [
     {
       name: "Javascript",
@@ -86,18 +111,27 @@ export default function Technologies() {
   return (
     <div>
       <Navbar />
-      <Slider {...settings}>
-        {techs.map((e) => (
-          <div className="card">
-            <div className="card-top">
-              <img src={e.img} alt="imagen" width="250px" height="230px" className="imag"/>
+      <div>
+        <Slider {...settings}>
+          {techs.map((e) => (
+            <div className="card">
+              <div>
+                <img
+                  src={e.img}
+                  alt="imagen"
+                  width="250px"
+                  height="230px"
+                  className="imag"
+                />
+              </div>
+              <hr />
+              <div>
+                <h2 className="name">{e.name}</h2>
+              </div>
             </div>
-            <div className="card-bottom">
-              <h2 className="name">{e.name}</h2>
-            </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 }
