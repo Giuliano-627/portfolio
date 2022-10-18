@@ -1,20 +1,15 @@
 import React from "react";
 import "./Home.css";
-import Swal from "sweetalert2";
-
+import { useDispatch } from "react-redux";
+import { setInTrue } from "../actions";
+import { useNavigate } from "react-router";
 export default function Navbar() {
-  function showAbout(e){
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  function showAbout(e) {
     e.preventDefault();
-    Swal.fire({
-      title: "<strong>Hola!</strong>",
-      html:
-        "<h2>Soy un joven proactivo, organizado y responsable, me considero resolutivo y me gustan los desafíos. </h2>" +
-        "<h2>Siempre estoy dispuesto a crecer como profesional, me gusta trabajar en equipo, autentica vocación por la lógica de programación.</h2>" +
-        "<h2>Gran capacidad de adaptación al trabajo en equipo, para diferentes entornos y necesidades.</h2>",
-      focusConfirm: false,
-      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
-      confirmButtonAriaLabel: "Thumbs up, great!",
-    })
+    dispatch(setInTrue());
+    navigate("/")
   }
   return (
     <nav className="navbar navbar-inverse bg-dark">
@@ -29,10 +24,7 @@ export default function Navbar() {
         <button class="btn btn-info btn-sm">Mis proyectos</button>
       </a>
       <div>
-        <button
-          class="btn btn-info btn-sm"
-          onClick={e=>showAbout(e)}
-        >
+        <button class="btn btn-info btn-sm" onClick={(e) => showAbout(e)}>
           Sobre mi
         </button>
       </div>
